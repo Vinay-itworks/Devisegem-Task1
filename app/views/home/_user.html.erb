@@ -1,0 +1,28 @@
+<div id="<%= dom_id user %>">
+  <p>
+  <span>
+    <strong>Id:</strong>
+    <%= user.id %>
+  </span>
+
+  <span>
+    <strong>Email:</strong>
+    <%= user.email %>
+  </span>
+
+  <span>
+    <strong>Admin:</strong>
+    <%= user.admin %>
+  </span>
+
+  <span>
+    <strong>Locked:</strong>
+    <%= user.access_locked? %>
+  </span>
+  <% if user.access_locked? %>
+  <%= button_to "Unlock", change_lock_path(id: user.id), method: :post %>
+  <% else %>
+  <%= button_to "Lock", change_lock_path(id: user.id), method: :post %>
+  <% end %>
+  </p>
+</div>

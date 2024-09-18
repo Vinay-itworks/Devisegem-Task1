@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root "home#index"
-  get "about", to: "home#about"
+  get "about", to: "home#about", as: :about
+  get "users", to: "home#users", as: :users
+  post "change_lock", to: "home#change_lock", as: :change_lock
   devise_for :users, controllers: {
     registration: "users/registrations",
     sessions: "users/sessions",
