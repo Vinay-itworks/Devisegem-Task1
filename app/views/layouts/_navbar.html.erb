@@ -1,0 +1,14 @@
+<nav>
+  <a id="logo" class="nav-link" href="#"><h2>User Auth</h2></a>
+  
+  <%= home_link %> |
+  <a id="about" class="nav-link" href="<%= about_path %>">About Me</a> |
+  <% if user_signed_in? %>
+  <%= edituser_link %> |
+  <%= signout_link %> |
+  <% else %>
+  <%= signup_link %> |
+  <%= signin_link %> |
+  <% end %>
+  
+</nav>
